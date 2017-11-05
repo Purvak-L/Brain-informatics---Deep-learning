@@ -1,0 +1,512 @@
+summary(lm(df$ge2~df$pl1+df$ge1+df$cc1))
+summary(lm(df$cc2~df$pl1+df$ge1+df$cc1))
+`45gb_theta` <- read.csv("C:/Users/inmas/Desktop/45gb_theta.csv", stringsAsFactors=FALSE)
+View(`45gb_theta`)
+df <- data.frame(`45gb_theta`)
+summary(lm(df$pl2~df$pl1+df$ge1+df$cc1))
+summary(lm(df$ge2~df$pl1+df$ge1+df$cc1))
+summary(lm(df$cc2~df$pl1+df$ge1+df$cc1))
+`67gb_theta` <- read.csv("C:/Users/inmas/Desktop/67gb_theta.csv", stringsAsFactors=FALSE)
+View(`67gb_theta`)
+df <- data.frame(`67gb_theta`)
+summary(lm(df$pl2~df$pl1+df$ge1+df$cc1))
+summary(lm(df$ge2~df$pl1+df$ge1+df$cc1))
+summary(lm(df$cc2~df$pl1+df$ge1+df$cc1))
+Shrey.Navigation.30.09.15.15.06.18 <- read.csv("C:/Users/inmas/Desktop/Navigation study/Shrey/Shrey-Navigation-30.09.15.15.06.18.CSV", header=FALSE, stringsAsFactors=FALSE)
+View(Shrey.Navigation.30.09.15.15.06.18)
+df <- data.frame(Shrey.Navigation.30.09.15.15.06.18)
+data(eeghead)
+shade3d(eeghead)
+eeghead$material$color <- rep("black",length(eeghead$material$color))
+wire3d(eeghead)
+dot3d(eeghead)
+open3d()
+shade3d( translate3d( tetrahedron3d(col = "red"), 0, 0, 0) )
+shade3d( translate3d( cube3d(col = "green"), 3, 0, 0) )
+shade3d( translate3d( octahedron3d(col = "blue"), 6, 0, 0) )
+shade3d( translate3d( dodecahedron3d(col = "cyan"), 9, 0, 0) )
+shade3d( translate3d( icosahedron3d(col = "magenta"), 12, 0, 0) )
+open3d()
+bg3d("gray")
+l0 <- oh3d(tran = par3d("userMatrix"), color = "green" )
+shade3d( translate3d( l0, -6, 0, 0 ))
+l1 <- subdivision3d( l0 )
+shade3d( translate3d( l1 , -2, 0, 0 ), color = "red", override = FALSE )
+l2 <- subdivision3d( l1 )
+shade3d( translate3d( l2 , 2, 0, 0 ), color = "red", override = TRUE )
+l3 <- subdivision3d( l2 )
+shade3d( translate3d( l3 , 6, 0, 0 ), color = "red" )
+shade3d(eeghead)
+wire3d(eeghead)
+wire3d(eeghead)
+data(eeghead)
+shade3d(eeghead)
+eeghead$material$color <- rep("black",length(eeghead$material$color))
+wire3d(eeghead)
+data(eeghead)
+shade3d(eeghead)
+eeghead$material$color <- rep("red",length(eeghead$material$color))
+wire3d(eeghead)
+data(eeghead)
+shade3d(eeghead)
+eeghead$material$color <- rep("red",length(eeghead$material$color))
+wire3d(eeghead)
+data(eeghead)
+shade3d(eeghead)
+eeghead$material$color <- rep("red",length(eeghead$material$color))
+wire3d(eeghead)
+data(eeghead)
+shade3d(eeghead)
+eeghead$material$color <- rep("red",length(eeghead$material$color))
+wire3d(eeghead)
+CPM.Results <- read.csv("C:/Users/inmas/Desktop/CPM Results.csv", stringsAsFactors=FALSE)
+View(CPM.Results)
+plot(CPM.Results$z.Score)
+plot(CPM.Results$Percentiles)
+y <- kmeans(x = CPM.Results$Percentiles,centers = 2)
+y <- kmeans(CPM.Results$Percentiles,centers = 2)
+class(CPM.Results$Percentiles)
+df <- data.frame(CPM.Results$Percentiles)
+y <- kmeans(df,centers = 2)
+clus <- kmeans(df, centers=4)
+df <- data.frame(CPM.Results$Percentiles(1:111))
+v <- CPM.Results$Percentiles[1:111]
+v
+df <- data.frame(v)
+clus <- kmeans(df, centers=2)
+clus
+plot(clus$cluster)
+clus$cluster
+table(data.frame(df, clus$cluster))
+clus$ifault
+clus$centers
+install.packages(ggplot2)
+install.packages("ggplot2")
+install.packages("plotly")
+library(plotly)
+set.seed(100)
+d <- diamonds[sample(nrow(diamonds), 1000), ]
+plot_ly(d, x = carat, y = price, text = paste("Clarity: ", clarity),
+mode = "markers", color = carat, size = carat)
+p <- ggplot(data = d, aes(x = carat, y = price)) +
+geom_point(aes(text = paste("Clarity:", clarity)), size = 4) +
+geom_smooth(aes(colour = cut, fill = cut)) + facet_wrap(~ cut)
+(gg <- ggplotly(p))
+library(Hmisc)
+install.packages("Hmisc")
+library(Hmisc)
+y <- describe(mydata)
+LIQ <- read.csv("C:/Users/inmas/Desktop/LIQ.csv", stringsAsFactors=FALSE)
+View(LIQ)
+y <- describe(LIQ)
+y
+install.packages("pastecs")
+library(pastecs)
+stat.desc(LIQ)
+HIQ <- read.csv("C:/Users/inmas/Desktop/HIQ.csv", stringsAsFactors=FALSE)
+View(HIQ)
+stat.desc(HIQ)
+cr1 <- read.csv("C:/Users/inmas/Desktop/cr1.csv", stringsAsFactors=FALSE)
+View(cr1)
+mtcars
+library(Hmisc)
+rcorr(cr1, type="pearson")
+rcorr(as.matrix(cr1))
+cor(x = cr1$l1_Correct,cr1$med.all)
+cor(x = cr1$l1_Error,cr1$sd.all)
+y <- cor(x = cr1$l1_Correct,cr1$med.all)
+plot(y)
+t <- data.frame(cr1$l1_Correct,cr1$med.all)
+rcorr(t,type="pearson")
+rcorr(x = cr1$l1_Correct,y = cr1$med.all,type = "pearson")
+k <- rcorr(x = cr1$l1_Correct,y = cr1$med.all,type = "pearson")
+k$r
+k$n
+k$p
+k <- rcorr(x = cr1$l1_Correct,y = cr1$med.all,type = "spearman")
+k
+k$r
+k$n
+k$p
+install.packages("corrplot")
+library(corrplot)
+k <- rcorr(x = cr1$l1_Correct,y = cr1$med.all,type = "pearson")
+corrplot(k, type="upper", order="hclust", tl.col="black", tl.srt=45)
+class(k)
+corrplot(k$r, type="upper", order="hclust", tl.col="black", tl.srt=45)
+Var1 <- c(rep(1, 50), rep(0, 50))
+Var2 <- c(rep(0, 50), rep(1, 50))
+x3 <- matrix(c(Var1, Var2), nrow = 100, ncol = 2)
+r1 <- rbm.train(x3, 10, numepochs = 20, cd = 10)
+library(deepnet)
+Var1 <- c(rep(1, 50), rep(0, 50))
+Var2 <- c(rep(0, 50), rep(1, 50))
+x3 <- matrix(c(Var1, Var2), nrow = 100, ncol = 2)
+r1 <- rbm.train(x3, 10, numepochs = 20, cd = 10)
+r1
+summary(r1)
+v <- c(0.2, 0.8)
+h <- rbm.up(r1, v)
+h
+library(RSNNS)
+install.packages("ica")
+library(ica)
+set.seed(123)
+nobs <- 100
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Amat
+Bmat <- matrix(2*runif(4),2,2)
+Bmat
+Xmat <- tcrossprod(Amat,Bmat)
+Xmat
+imod <- icafast(Xmat,2)
+imod
+acy(Bmat,imod$M)
+congru(Amat,imod$S)
+imod$S
+imod$M
+Bmat
+imod$W
+acy(Bmat,imod$M)
+congru(Amat,imod$S)
+imod$S
+LIQ
+HIQ
+tt.test(LIQ$alert,HIQ$alert)
+t.test(LIQ$alert,HIQ$alert)
+y <- t.test(LIQ$alert,HIQ$alert)
+y
+y$statistic
+y$parameter
+y$p.value
+table(y)
+class(y)
+y <- data.frame(y)
+y
+boxplot(y)
+summary(y)
+y
+x <- t.test(LIQ$orient,HIQ$orient)
+x
+z <- t.test(LIQ$conflict,HIQ$conflict)
+z
+cr2 <- read.csv("C:/Users/inmas/Desktop/cr2.csv", stringsAsFactors=FALSE)
+View(cr2)
+y <- rcorr(x = cr2$Correct, y = cr2$med.all, type = "pearson")
+library(Hmisc)
+y <- rcorr(x = cr2$Correct, y = cr2$med.all, type = "pearson")
+y$r
+y$n
+y$P
+y <- rcorr(x = cr2$Error, y = cr2$sd.all, type = "pearson")
+y$r
+cr3 <- read.csv("C:/Users/inmas/Desktop/cr3.csv", stringsAsFactors=FALSE)
+View(cr3)
+y <- rcorr(x = cr3$Error, y = cr3$sd.all, type = "pearson")
+y$r
+y <- rcorr(x = cr3$Correct, y = cr3$med.all, type = "pearson")
+y$r
+cr4 <- read.csv("C:/Users/inmas/Desktop/cr4.csv", stringsAsFactors=FALSE)
+View(cr4)
+y <- rcorr(x = cr4$Correct, y = cr4$med.all, type = "pearson")
+y$r
+y <- rcorr(x = cr4$Error, y = cr4$sd.all, type = "pearson")
+y$r
+level.1_HIQ <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/level 1_HIQ.csv", stringsAsFactors=FALSE)
+View(level.1_HIQ)
+level.1_LIQ <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/level 1_LIQ.csv", stringsAsFactors=FALSE)
+View(level.1_LIQ)
+y <- t.test(level.1_HIQ$Correct,level.1_LIQ$Correct)
+y
+y <- t.test(level.1_HIQ$Missed,level.1_LIQ$Missed)
+y
+y <- t.test(level.1_HIQ$Avg.response.time,level.1_LIQ$Avg.response.time)
+y
+LEVEL.2_hiq <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/LEVEL 2_hiq.csv", stringsAsFactors=FALSE)
+View(LEVEL.2_hiq)
+LEVEL.2_LIQ <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/LEVEL 2_LIQ.csv", stringsAsFactors=FALSE)
+View(LEVEL.2_LIQ)
+y <- t.test(LEVEL.2_hiq$Correct,LEVEL.2_LIQ$Correct)
+Y
+y
+y <- t.test(LEVEL.2_hiq$Missed,LEVEL.2_LIQ$Missed)
+y
+y <- t.test(LEVEL.2_hiq$Avg.response.time,LEVEL.2_LIQ$Avg.response.time)
+LEVEL.2_hiq <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/LEVEL 2_hiq.csv", stringsAsFactors=FALSE)
+View(LEVEL.2_hiq)
+LEVEL.2_hiq <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/LEVEL 2_hiq.csv", stringsAsFactors=FALSE)
+View(LEVEL.2_hiq)
+y <- t.test(LEVEL.2_hiq$Avg.response.time,LEVEL.2_LIQ$Avg.response.time)
+y
+LEVEL.3_hiq <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/LEVEL 3_hiq.csv", stringsAsFactors=FALSE)
+View(LEVEL.3_hiq)
+LEVEL.3_liq <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/LEVEL 3_liq.csv", stringsAsFactors=FALSE)
+View(LEVEL.3_liq)
+y <- t.test(LEVEL.3_hiq$Correct,LEVEL.3_liq$Correct)
+y
+y <- t.test(LEVEL.3_hiq$Missed,LEVEL.3_liq$Missed)
+y
+y <- t.test(LEVEL.3_hiq$Avg.response.time,LEVEL.3_liq$Avg.response.time)
+y
+LEVEL.4_hiq <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/LEVEL 4_hiq.csv", stringsAsFactors=FALSE)
+View(LEVEL.4_hiq)
+LEVEL.4_liq <- read.csv("C:/Users/inmas/Desktop/Assignment 5/level wise/LEVEL 4_liq.csv", stringsAsFactors=FALSE)
+View(LEVEL.4_liq)
+y <- t.test(LEVEL.4_hiq$Correct,LEVEL.4_liq$Correct)
+y
+y <- t.test(LEVEL.4_hiq$Missed,LEVEL.4_liq$Missed)
+y
+y <- t.test(LEVEL.4_hiq$Avg.response.time,LEVEL.4_liq$Avg.response.time)
+y
+library(pastecs)
+stat.desc(level.1_HIQ)
+stat.desc(level.1_LIQ)
+stat.desc(LEVEL.2_hiq)
+stat.desc(LEVEL.2_LIQ)
+stat.desc(LEVEL.3_hiq)
+stat.desc(LEVEL.3_liq)
+stat.desc(LEVEL.4_hiq)
+stat.desc(LEVEL.4_liq)
+error <- read.csv("C:/Users/inmas/Desktop/error.csv", stringsAsFactors=FALSE)
+View(error)
+stat.desc(error)
+error2 <- read.csv("C:/Users/inmas/Desktop/error2.csv", stringsAsFactors=FALSE)
+View(error2)
+stat.desc(error2)
+t.test(error$ae,error2$ae)
+t.test(error$oe,error2$oe)
+t.test(error$ce,error2$ce)
+acc_high <- read.csv("C:/Users/inmas/Desktop/acc_high.csv", stringsAsFactors=FALSE)
+View(acc_high)
+acc_low <- read.csv("C:/Users/inmas/Desktop/acc_low.csv", stringsAsFactors=FALSE)
+View(acc_low)
+stat.desc(acc_high)
+stat.desc(acc_low)
+t.test(acc_high$med.all,acc_low$med.all)
+t.test(acc_high$overall.accuracy,acc_low$overall.accuracy)
+CPM.Results
+plot(CPM.Results$z.Score)
+plot(CPM.Results$Percentiles)
+plot(CPM.Results$Percentiles, CPM.Results$z.Score)
+library(plotly)
+plotly(CPM.Results$Percentiles, CPM.Results$z.Score)
+plotly(CPM.Results, x = CPM.Results$Percentiles, y = CPM.Results$z.Score)
+plotly(CPM.Results)
+plot_ly(data = CPM.Results, x = CPM.Results$z.Score, y = CPM.Results$Percentiles)
+plot_ly(data = CPM.Results, x = CPM.Results$z.Score, y = CPM.Results$Percentiles)
+plot_ly(x = CPM.Results$z.Score, y = CPM.Results$Percentiles)
+df <- data.frame(CPM.Results$Percentiles[1:111])
+clus <- kmeans(df, centers = 2)
+clus
+table(data.frame(clus$centers,CPM.Results$X,CPM.Results$Percentiles))
+nrow(clus$centers)
+clus$centers
+clus$cluster
+table(data.frame(clus$cluster,CPM.Results$X,CPM.Results$Percentiles))
+nrow(clus$cluster)
+table(data.frame(clus$cluster,CPM.Results$X,CPM[1:111].Results$Percentiles[1:111]))
+table(data.frame(clus$cluster,CPM.Results$X[1:111],CPM.Results$Percentiles[1:111]))
+y <- (data.frame(clus$cluster,CPM.Results$X[1:111],CPM.Results$Percentiles[1:111]))
+y
+set.seed(123)
+nobs <- 100
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+library(ica)
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(4),2,2)
+Xmat <- tcrossprod(Amat,Bmat)
+imod <- icafast(Xmat,2)
+acy(Bmat,imod$M)
+congru(Amat,imod$S)
+imod$S
+imod$M
+imod$W
+imod$Y
+library(darch)
+example("darch")
+darch <- example.xor()
+library(h20)
+install.packages("h2o")
+library(h2o)
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+knn(train, test, cl, k = 3, prob=TRUE)
+install.packages("knn")
+install.packages("kknn")
+library(kknn)
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+knn(train, test, cl, k = 3, prob=TRUE)
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+kknn(train, test, cl, k = 3, prob=TRUE)
+data(iris)
+m <- dim(iris)[1]
+m
+prob = rep(1/m, m))
+val <- sample(1:m, size = round(m/3), replace = FALSE,
+prob = rep(1/m, m))
+val
+iris.learn <- iris[-val,]
+iris.learn
+iris.valid <- iris[val,]
+iris.valid
+kernel = "triangular")
+iris.kknn <- kknn(Species~., iris.learn, iris.valid, distance = 1,
+kernel = "triangular")
+iris.kknn
+summary(iris.kknn)
+install.packages("class")
+library(class)
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+kknn(train, test, cl, k = 3, prob=TRUE)
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+knn(train, test, cl, k = 3, prob=TRUE)
+iris3
+class(iris3)
+class(iris)
+attributes(.Last.value)
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+knn(train, test, cl, k = 3, prob=TRUE)
+attributes(.Last.value)
+cl
+iris3[1:25,,1]
+iris3[1:25,,2]
+iris3[26:50,,1]
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+cl
+class(cl)
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+knn(train, test, cl, k = 3, prob=TRUE)
+y <- knn(train, test, cl, k = 3, prob=TRUE)
+y
+class(y)
+train <- rbind(iris3[,,1], iris3[,,2], iris3[,,3])
+cl <- factor(c(rep("s",50), rep("c",50), rep("v",50)))
+knn.cv(train, cl, k = 3, prob = TRUE)
+attributes(.Last.value)
+y
+y
+y <- data.frame(y)
+y
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+cl <- factor(c(rep("s",25), rep("c",25), rep("v",25)))
+knn(train, test, cl, k = 3, prob=TRUE)
+y1 <- data.frame(test,y)
+y1
+install.packages("igraph")
+install.packages("network")
+install.packages("sna")
+install.packages("ndtv")
+require(neuralnet)
+require(h2o)
+install.packages("e1071")
+require(darch)
+require(RSNNS)
+install.packages(glm2)
+install.packages("glm2")
+install.packages("RTextTools")
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+library(eegAnalysis)
+sim<-randEEG()
+sim
+sim$data
+head(sim$data)
+plotEEG(sim$data, sim$classes.Id, sim$rec.Id, which.classes = "ALL",
+which.rec=list(c(1,2,3),c(2,3,4)), which.channels=c(1,2,3),
+type = 'original', m.a = 10)
+plotEEG(sim$data, sim$classes.Id, sim$rec.Id, which.classes = 1,
+which.rec=list(c(1)), which.channels=c(2), type = 'wavelet',
+wavelet="gaussian2", abs=TRUE,variance=1)
+plotEEG(sim$data, sim$classes.Id, sim$rec.Id, which.classes = "ALL",
+which.rec="ALL", which.channels=c(2), type = 'T.pvalue',
+wavelet="gaussian2", abs=TRUE,variance=10)
+plotEEG(sim$data, sim$classes.Id, sim$rec.Id, which.classes = "ALL",
+which.rec="ALL", which.channels=1, type = 'spectrum', m.a = 10)
+plotEEG(sim$data, sim$classes.Id, sim$rec.Id, which.classes = "ALL",
+which.rec="ALL", which.channels=5, type = 'spectrum', m.a = c(5,20))
+plotEEG(sim$data, sim$classes.Id, sim$rec.Id, which.classes = "ALL",
+which.rec=list(c(1,2,3),c(2,3,4)), which.channels=c(1,2,3),
+type = 'original', m.a = 10)
+plotEEG(sim$data, sim$classes.Id, sim$rec.Id, which.classes = "ALL",
+which.rec="ALL", which.channels=1, type = 'spectrum', m.a = 10)
+plotwindows(sim$data, sim$classes.Id , sim$rec.Id , which.classes = "ALL", which.rec="ALL",
+which.channels=c(1), win=10, stat="sum", power = 2, abs=FALSE,
+log=FALSE,complete = FALSE, mintomax=FALSE)
+head(sim$data)
+library(e1071)
+data(iris)
+attach(iris)
+model <- svm(Species ~ ., data = iris)
+head(iris)
+x <- subset(iris, select = -Species)
+head(x)
+y <- Species
+model <- svm(x, y)
+print(model)
+summary(model)
+pred <- predict(model, x)
+table(pred, y)
+pred
+data.frame(pred)
+pred <- predict(model, x, decision.values = TRUE)
+pred
+attr(pred, "decision.values")[1:4,]
+plot(cmdscale(dist(iris[,-5])),
+col = as.integer(iris[,5]),
+pch = c("o","+")[1:150 %in% model$index + 1])
+counts <- c(18,17,15,20,10,20,25,13,12)
+outcome <- gl(3,1,9)
+treatment <- gl(3,3)
+print(d.AD <- data.frame(treatment, outcome, counts))
+glm.D93 <- glm(counts ~ outcome + treatment, family = poisson())
+glm.D93 <- glm(counts ~ outcome + treatment, family = logit())
+glm.D93 <- glm(counts ~ outcome + treatment, family = logit)
+glm.D93 <- glm(counts ~ outcome + treatment, family = Logit)
+glm.D93 <- glm(counts ~ outcome + treatment, family = poisson())
+summary(glm.D93)
+anova(glm.D93)
+anorex.1 <- glm(Postwt ~ Prewt + Treat + offset(Prewt),
+family = gaussian, data = anorexia
+anorex.1 <- glm(Postwt ~ Prewt + Treat + offset(Prewt),
+family = gaussian, data = anorexia)
+summary(anorex.1)
+anorex.1 <- glm(Postwt ~ Prewt + Treat + offset(Prewt),
+family = binomial(link="logit"), data = anorexia)
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+shiny::runApp('C:/Users/inmas/Desktop/RShiny')
+setwd("C:/Users/inmas/Desktop/RShiny")
